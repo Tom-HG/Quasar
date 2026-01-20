@@ -9,7 +9,7 @@ This section uses vLLM-Ascend for evaluation.
 ## Citation
 If you use this project or code in your research, please cite it using the following BibTeX:
 
-
+> 
 > @misc{quasar2025,
 > 
 >     title={Quasar: Quantized Self-Speculative Acceleration for Rapid Inference},
@@ -21,3 +21,4 @@ If you use this project or code in your research, please cite it using the follo
 >     url = {https://github.com/Tom-HG/Quasar}
 > 
 > }
+> 
