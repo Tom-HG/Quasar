@@ -8,7 +8,7 @@ cd /root/pangu_infer/quantization/msit/msmodelslim/example/Qwen
 # msmodelslim quant --model_path /opt/pangu/openPangu-Embedded-7B-V1.1 --save_path /home/Pangu-7B-W8A8 --device npu --model_type Qwen3-8B --quant_type w8a8 --trust_remote_code True
 # msmodelslim quant --model_path /home/Qwen3-8B --save_path /home/Qwen3-8B-W8A8 --device npu --model_type Qwen3-8B --quant_type w8a8 --trust_remote_code True --is_dynamic True
 
-python quant_pangu.py \
+python quant_qwen.py \
           --model_path /opt/pangu/openPangu-Embedded-7B-V1.1 \
           --save_directory /home/Pangu-7B-W8A8 \
           --device_type npu \
