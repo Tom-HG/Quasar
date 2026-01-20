@@ -1,0 +1,254 @@
+INFO 01-20 19:13:46 [__init__.py:39] Available plugins for group vllm.platform_plugins:
+INFO 01-20 19:13:46 [__init__.py:41] - ascend -> vllm_ascend:register
+INFO 01-20 19:13:46 [__init__.py:44] All plugins in this group will be loaded. Set `VLLM_PLUGINS` to control which plugins to load.
+INFO 01-20 19:13:46 [__init__.py:235] Platform plugin ascend is activated
+WARNING 01-20 19:13:47 [_custom_ops.py:20] Failed to import from vllm._C with ImportError('/root/miniconda3/envs/suffix/lib/python3.11/site-packages/vllm/_C.abi3.so: undefined symbol: _ZN3c108ListType3getERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS_4Type24SingletonOrSharedTypePtrIS9_EE')
+draft_model_path=/home/lyh/weights/hf/eagle3/llama31chat/8B/
+base_model_path=/home/Qwen3-8B-W8A8
+load_in_8bit=True
+model_id=quan-qwen3-8b
+bench_name=humaneval
+question_begin=0
+question_end=5
+answer_file=None
+max_new_token=1024
+total_token=60
+depth=5
+top_k=10
+num_choices=1
+num_gpus_per_model=1
+num_gpus_total=1
+max_gpu_memory=None
+temperature=0.0
+tree_choices=mc_sim_7b_63
+use_eagle3=False
+use_quan=True
+use_sd=False
+Output to ./data/humaneval/model_answer/quan-qwen3-8b-temperature-0.0.jsonl
+Total questions: 5, chunk size: 5
+Using quantization
+INFO 01-20 19:13:50 [importing.py:63] Triton not installed or not compatible; certain GPU-related functions will not be available.
+WARNING 01-20 19:13:50 [registry.py:413] Model architecture DeepSeekMTPModel is already registered, and will be overwritten by the new model class vllm_ascend.models.deepseek_mtp:CustomDeepSeekMTP.
+WARNING 01-20 19:13:50 [registry.py:413] Model architecture Qwen2VLForConditionalGeneration is already registered, and will be overwritten by the new model class vllm_ascend.models.qwen2_vl:AscendQwen2VLForConditionalGeneration.
+WARNING 01-20 19:13:50 [registry.py:413] Model architecture Qwen2_5_VLForConditionalGeneration is already registered, and will be overwritten by the new model class vllm_ascend.models.qwen2_5_vl:AscendQwen2_5_VLForConditionalGeneration.
+WARNING 01-20 19:13:50 [registry.py:413] Model architecture DeepseekV2ForCausalLM is already registered, and will be overwritten by the new model class vllm_ascend.models.deepseek_v2:CustomDeepseekV2ForCausalLM.
+WARNING 01-20 19:13:50 [registry.py:413] Model architecture DeepseekV3ForCausalLM is already registered, and will be overwritten by the new model class vllm_ascend.models.deepseek_v2:CustomDeepseekV3ForCausalLM.
+WARNING 01-20 19:13:50 [registry.py:413] Model architecture Qwen3MoeForCausalLM is already registered, and will be overwritten by the new model class vllm_ascend.models.qwen3_moe:CustomQwen3MoeForCausalLM.
+INFO 01-20 19:14:04 [config.py:841] This model supports multiple tasks: {'classify', 'reward', 'generate', 'embed'}. Defaulting to 'generate'.
+INFO 01-20 19:14:04 [config.py:1472] Using max model len 2048
+WARNING 01-20 19:14:04 [config.py:960] ascend quantization is not fully optimized yet. The speed can be slower than non-quantized models.
+INFO 01-20 19:14:04 [platform.py:161] Compilation disabled, using eager mode by default
+INFO 01-20 19:14:04 [llm_engine.py:230] Initializing a V0 LLM engine (v0.9.2) with config: model='/home/Qwen3-8B-W8A8', speculative_config=None, tokenizer='/home/Qwen3-8B-W8A8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config={}, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=2048, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=True, quantization=ascend, enforce_eager=False, kv_cache_dtype=auto,  device_config=npu, decoding_config=DecodingConfig(backend='xgrammar', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=None, served_model_name=/home/Qwen3-8B-W8A8, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=True, pooler_config=None, compilation_config={"level":0,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":[],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{},"inductor_passes":{},"use_cudagraph":false,"cudagraph_num_of_warmups":0,"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"max_capture_size":256,"local_cache_dir":null}, use_cached_outputs=False, 
+INFO 01-20 19:14:13 [parallel_state.py:1076] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+INFO 01-20 19:14:13 [model_runner.py:995] Starting to load model /home/Qwen3-8B-W8A8...
+INFO 01-20 19:14:14 [quantizer.py:89] Using the vLLM Ascend Quantizer version now!
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.31s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.32s/it]
+
+INFO 01-20 19:14:17 [default_loader.py:272] Loading weights took 1.83 seconds
+INFO 01-20 19:14:18 [model_runner.py:1000] Loading model weights took 8.8191 GB
+INFO 01-20 19:14:24 [executor_base.py:113] # npu blocks: 2141, # CPU blocks: 227
+INFO 01-20 19:14:24 [executor_base.py:118] Maximum concurrency for 2048 tokens per request: 133.81x
+INFO 01-20 19:14:25 [llm_engine.py:428] init engine (profile, create kv cache, warmup model) took 7.13 seconds
+NPU VISIBLE DEVICES: 0
+运行设备 (Device):  npu
+
+ 模型结构 (Model Structure): 
+
+Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): VocabParallelEmbedding(num_embeddings=151936, embedding_dim=4096, org_vocab_size=151936, num_embeddings_padded=151936, tp_size=1)
+    (layers): ModuleList(
+      (0-35): 36 x Qwen3DecoderLayer(
+        (self_attn): Qwen3Attention(
+          (qkv_proj): QKVParallelLinear(in_features=4096, output_features=6144, bias=False, tp_size=1, gather_output=False)
+          (o_proj): RowParallelLinear(input_features=4096, output_features=4096, bias=False, tp_size=1, reduce_results=True)
+          (rotary_emb): RotaryEmbedding(head_size=128, rotary_dim=128, max_position_embeddings=40960, base=1000000, is_neox_style=True)
+          (attn): Attention(head_size=128, num_heads=32, num_kv_heads=8, scale=0.08838834764831845, backend=AscendAttentionBackendImpl)
+          (q_norm): RMSNorm(hidden_size=128, eps=1e-06)
+          (k_norm): RMSNorm(hidden_size=128, eps=1e-06)
+        )
+        (mlp): Qwen2MLP(
+          (gate_up_proj): MergedColumnParallelLinear(in_features=4096, output_features=24576, bias=False, tp_size=1, gather_output=False)
+          (down_proj): RowParallelLinear(input_features=12288, output_features=4096, bias=False, tp_size=1, reduce_results=True)
+          (act_fn): SiluAndMul()
+        )
+        (input_layernorm): RMSNorm(hidden_size=4096, eps=1e-06)
+        (post_attention_layernorm): RMSNorm(hidden_size=4096, eps=1e-06)
+      )
+    )
+    (norm): RMSNorm(hidden_size=4096, eps=1e-06)
+  )
+  (lm_head): ParallelLMHead(num_embeddings=151936, embedding_dim=4096, org_vocab_size=151936, num_embeddings_padded=151936, tp_size=1)
+  (logits_processor): LogitsProcessor(vocab_size=151936, org_vocab_size=151936, scale=1.0, logits_as_input=False)
+)
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00, 88.66it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.61s/it, est. speed input: 1.92 toks/s, output: 19.10 toks/s]Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.61s/it, est. speed input: 1.92 toks/s, output: 19.10 toks/s]Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.62s/it, est. speed input: 1.92 toks/s, output: 19.10 toks/s]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00, 817.13it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.04s/it, est. speed input: 1.94 toks/s, output: 19.30 toks/s]Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.04s/it, est. speed input: 1.94 toks/s, output: 19.30 toks/s]Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.04s/it, est. speed input: 1.94 toks/s, output: 19.30 toks/s]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00, 826.63it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.96s/it, est. speed input: 1.94 toks/s, output: 19.34 toks/s]Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.96s/it, est. speed input: 1.94 toks/s, output: 19.34 toks/s]Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.96s/it, est. speed input: 1.94 toks/s, output: 19.34 toks/s]
+Warmup done
+  0%|          | 0/5 [00:00<?, ?it/s]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 806.91it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.74s/it, est. speed input: 1.92 toks/s, output: 19.05 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.74s/it, est. speed input: 1.92 toks/s, output: 19.05 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.74s/it, est. speed input: 1.92 toks/s, output: 19.05 toks/s]
+ 20%|██        | 1/5 [00:53<03:34, 53.74s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 544.36it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.81s/it, est. speed input: 2.90 toks/s, output: 19.03 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.81s/it, est. speed input: 2.90 toks/s, output: 19.03 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:53<00:00, 53.81s/it, est. speed input: 2.90 toks/s, output: 19.03 toks/s]
+ 40%|████      | 2/5 [01:47<02:41, 53.79s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 707.78it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.63s/it, est. speed input: 2.68 toks/s, output: 19.46 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.63s/it, est. speed input: 2.68 toks/s, output: 19.46 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.63s/it, est. speed input: 2.68 toks/s, output: 19.46 toks/s]
+ 60%|██████    | 3/5 [02:40<01:46, 53.26s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 659.17it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.55s/it, est. speed input: 2.65 toks/s, output: 19.49 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.55s/it, est. speed input: 2.65 toks/s, output: 19.49 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.55s/it, est. speed input: 2.65 toks/s, output: 19.49 toks/s]
+ 80%|████████  | 4/5 [03:32<00:52, 52.98s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 537.80it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.72s/it, est. speed input: 3.55 toks/s, output: 19.42 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.72s/it, est. speed input: 3.55 toks/s, output: 19.42 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:52<00:00, 52.72s/it, est. speed input: 3.55 toks/s, output: 19.42 toks/s]
+100%|██████████| 5/5 [04:25<00:00, 52.89s/it]100%|██████████| 5/5 [04:25<00:00, 53.09s/it]
+INFO 01-20 19:21:53 [__init__.py:39] Available plugins for group vllm.platform_plugins:
+INFO 01-20 19:21:53 [__init__.py:41] - ascend -> vllm_ascend:register
+INFO 01-20 19:21:53 [__init__.py:44] All plugins in this group will be loaded. Set `VLLM_PLUGINS` to control which plugins to load.
+INFO 01-20 19:21:53 [__init__.py:235] Platform plugin ascend is activated
+WARNING 01-20 19:21:54 [_custom_ops.py:20] Failed to import from vllm._C with ImportError('/root/miniconda3/envs/suffix/lib/python3.11/site-packages/vllm/_C.abi3.so: undefined symbol: _ZN3c108ListType3getERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS_4Type24SingletonOrSharedTypePtrIS9_EE')
+draft_model_path=/home/lyh/weights/hf/eagle3/llama31chat/8B/
+base_model_path=/home/Qwen3-8B-W8A8
+load_in_8bit=True
+model_id=quan_sd-qwen3-8b
+bench_name=humaneval
+question_begin=0
+question_end=10
+answer_file=None
+max_new_token=1024
+total_token=60
+depth=5
+top_k=10
+num_choices=1
+num_gpus_per_model=1
+num_gpus_total=1
+max_gpu_memory=None
+temperature=0.0
+tree_choices=mc_sim_7b_63
+use_eagle3=False
+use_quan=True
+use_sd=True
+Output to ./data/humaneval/model_answer/quan_sd-qwen3-8b-temperature-0.0.jsonl
+Total questions: 10, chunk size: 10
+Using both quantization and speculative decoding
+INFO 01-20 19:21:56 [importing.py:63] Triton not installed or not compatible; certain GPU-related functions will not be available.
+WARNING 01-20 19:21:57 [registry.py:413] Model architecture DeepSeekMTPModel is already registered, and will be overwritten by the new model class vllm_ascend.models.deepseek_mtp:CustomDeepSeekMTP.
+WARNING 01-20 19:21:57 [registry.py:413] Model architecture Qwen2VLForConditionalGeneration is already registered, and will be overwritten by the new model class vllm_ascend.models.qwen2_vl:AscendQwen2VLForConditionalGeneration.
+WARNING 01-20 19:21:57 [registry.py:413] Model architecture Qwen2_5_VLForConditionalGeneration is already registered, and will be overwritten by the new model class vllm_ascend.models.qwen2_5_vl:AscendQwen2_5_VLForConditionalGeneration.
+WARNING 01-20 19:21:57 [registry.py:413] Model architecture DeepseekV2ForCausalLM is already registered, and will be overwritten by the new model class vllm_ascend.models.deepseek_v2:CustomDeepseekV2ForCausalLM.
+WARNING 01-20 19:21:57 [registry.py:413] Model architecture DeepseekV3ForCausalLM is already registered, and will be overwritten by the new model class vllm_ascend.models.deepseek_v2:CustomDeepseekV3ForCausalLM.
+WARNING 01-20 19:21:57 [registry.py:413] Model architecture Qwen3MoeForCausalLM is already registered, and will be overwritten by the new model class vllm_ascend.models.qwen3_moe:CustomQwen3MoeForCausalLM.
+INFO 01-20 19:22:11 [config.py:841] This model supports multiple tasks: {'generate', 'embed', 'reward', 'classify'}. Defaulting to 'generate'.
+INFO 01-20 19:22:11 [config.py:1472] Using max model len 2048
+WARNING 01-20 19:22:11 [config.py:960] ascend quantization is not fully optimized yet. The speed can be slower than non-quantized models.
+INFO 01-20 19:22:11 [platform.py:161] Compilation disabled, using eager mode by default
+INFO 01-20 19:22:11 [llm_engine.py:230] Initializing a V0 LLM engine (v0.9.2) with config: model='/home/Qwen3-8B-W8A8', speculative_config=SpeculativeConfig(method='ngram', model=None, num_spec_tokens=5), tokenizer='/home/Qwen3-8B-W8A8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config={}, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=2048, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=True, quantization=ascend, enforce_eager=False, kv_cache_dtype=auto,  device_config=npu, decoding_config=DecodingConfig(backend='xgrammar', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=None, served_model_name=/home/Qwen3-8B-W8A8, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=False, pooler_config=None, compilation_config={"level":0,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":[],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{},"inductor_passes":{},"use_cudagraph":false,"cudagraph_num_of_warmups":0,"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"max_capture_size":256,"local_cache_dir":null}, use_cached_outputs=False, 
+INFO 01-20 19:22:12 [patch_spec_decode_worker.py:109] Configuring SpecDecodeWorker with proposer=<class 'vllm.spec_decode.ngram_worker.NGramWorker'>
+INFO 01-20 19:22:12 [rejection_sampler.py:64] Use pytorch for rejection sampling.
+INFO 01-20 19:22:12 [patch_spec_decode_worker.py:121] [Speculative Decoding] Configuring SpecDecodeWorker with sampler=<class 'vllm.model_executor.layers.rejection_sampler.RejectionSampler'>
+INFO 01-20 19:22:12 [patch_spec_decode_worker.py:128] [Speculative Decoding] Disabling MQA scorer as the MQA is only available with flash attn backend.
+INFO 01-20 19:22:12 [patch_spec_decode_worker.py:141] [Speculative Decoding] Disabling MQA scorer as the target model is not running in eager mode.
+Initialized SpecDecodeWorker.!!!!!!!!!!!!!!!!!
+INFO 01-20 19:22:14 [parallel_state.py:1076] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+INFO 01-20 19:22:14 [model_runner.py:995] Starting to load model /home/Qwen3-8B-W8A8...
+INFO 01-20 19:22:14 [quantizer.py:89] Using the vLLM Ascend Quantizer version now!
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.29s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.29s/it]
+
+INFO 01-20 19:22:16 [default_loader.py:272] Loading weights took 1.80 seconds
+INFO 01-20 19:22:24 [model_runner.py:1000] Loading model weights took 8.8191 GB
+INFO 01-20 19:22:25 [spec_decode_worker.py:383] [Speculative Decoding] Use batch expansion for scoring proposals.
+INFO 01-20 19:22:31 [executor_base.py:113] # npu blocks: 2140, # CPU blocks: 227
+INFO 01-20 19:22:31 [executor_base.py:118] Maximum concurrency for 2048 tokens per request: 133.75x
+INFO 01-20 19:22:31 [llm_engine.py:428] init engine (profile, create kv cache, warmup model) took 6.43 seconds
+NPU VISIBLE DEVICES: 0
+运行设备 (Device):  npu
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00, 98.41it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:45<00:00, 45.78s/it, est. speed input: 2.25 toks/s, output: 22.37 toks/s]Processed prompts: 100%|██████████| 1/1 [00:45<00:00, 45.78s/it, est. speed input: 2.25 toks/s, output: 22.37 toks/s]Processed prompts: 100%|██████████| 1/1 [00:45<00:00, 45.78s/it, est. speed input: 2.25 toks/s, output: 22.37 toks/s]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00, 865.34it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:45<00:00, 45.08s/it, est. speed input: 2.28 toks/s, output: 22.71 toks/s]Processed prompts: 100%|██████████| 1/1 [00:45<00:00, 45.08s/it, est. speed input: 2.28 toks/s, output: 22.71 toks/s]Processed prompts: 100%|██████████| 1/1 [00:45<00:00, 45.08s/it, est. speed input: 2.28 toks/s, output: 22.71 toks/s]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00, 878.94it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:44<00:00, 44.78s/it, est. speed input: 2.30 toks/s, output: 22.87 toks/s]Processed prompts: 100%|██████████| 1/1 [00:44<00:00, 44.78s/it, est. speed input: 2.30 toks/s, output: 22.87 toks/s]Processed prompts: 100%|██████████| 1/1 [00:44<00:00, 44.78s/it, est. speed input: 2.30 toks/s, output: 22.87 toks/s]
+Warmup done
+  0%|          | 0/10 [00:00<?, ?it/s]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 873.09it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:44<00:00, 44.58s/it, est. speed input: 2.31 toks/s, output: 22.97 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:44<00:00, 44.58s/it, est. speed input: 2.31 toks/s, output: 22.97 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:44<00:00, 44.58s/it, est. speed input: 2.31 toks/s, output: 22.97 toks/s]
+ 10%|█         | 1/10 [00:44<06:41, 44.58s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 544.43it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:30<00:00, 30.18s/it, est. speed input: 5.17 toks/s, output: 33.92 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:30<00:00, 30.18s/it, est. speed input: 5.17 toks/s, output: 33.92 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:30<00:00, 30.19s/it, est. speed input: 5.17 toks/s, output: 33.92 toks/s]
+ 20%|██        | 2/10 [01:14<04:48, 36.12s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 724.28it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:42<00:00, 42.97s/it, est. speed input: 3.28 toks/s, output: 23.83 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:42<00:00, 42.97s/it, est. speed input: 3.28 toks/s, output: 23.83 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:42<00:00, 42.97s/it, est. speed input: 3.28 toks/s, output: 23.83 toks/s]
+ 30%|███       | 3/10 [01:57<04:34, 39.25s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 689.06it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:43<00:00, 43.74s/it, est. speed input: 3.18 toks/s, output: 23.41 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:43<00:00, 43.74s/it, est. speed input: 3.18 toks/s, output: 23.41 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:43<00:00, 43.74s/it, est. speed input: 3.18 toks/s, output: 23.41 toks/s]
+ 40%|████      | 4/10 [02:41<04:06, 41.02s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 548.63it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:39<00:00, 39.64s/it, est. speed input: 4.72 toks/s, output: 25.83 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:39<00:00, 39.64s/it, est. speed input: 4.72 toks/s, output: 25.83 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:39<00:00, 39.64s/it, est. speed input: 4.72 toks/s, output: 25.83 toks/s]
+ 50%|█████     | 5/10 [03:21<03:22, 40.53s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 696.38it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:35<00:00, 35.02s/it, est. speed input: 3.85 toks/s, output: 29.24 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:35<00:00, 35.02s/it, est. speed input: 3.85 toks/s, output: 29.24 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:35<00:00, 35.03s/it, est. speed input: 3.85 toks/s, output: 29.24 toks/s]
+ 60%|██████    | 6/10 [03:56<02:34, 38.66s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 964.43it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:43<00:00, 43.32s/it, est. speed input: 1.66 toks/s, output: 23.64 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:43<00:00, 43.32s/it, est. speed input: 1.66 toks/s, output: 23.64 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:43<00:00, 43.32s/it, est. speed input: 1.66 toks/s, output: 23.64 toks/s]
+ 70%|███████   | 7/10 [04:39<02:00, 40.18s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 675.74it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:40<00:00, 40.74s/it, est. speed input: 3.93 toks/s, output: 25.14 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:40<00:00, 40.74s/it, est. speed input: 3.93 toks/s, output: 25.14 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:40<00:00, 40.74s/it, est. speed input: 3.93 toks/s, output: 25.14 toks/s]
+ 80%|████████  | 8/10 [05:20<01:20, 40.36s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 716.49it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:36<00:00, 36.98s/it, est. speed input: 3.79 toks/s, output: 27.69 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:36<00:00, 36.98s/it, est. speed input: 3.79 toks/s, output: 27.69 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:36<00:00, 36.98s/it, est. speed input: 3.79 toks/s, output: 27.69 toks/s]
+ 90%|█████████ | 9/10 [05:57<00:39, 39.30s/it]
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 1/1 [00:00<00:00, 818.56it/s]
+
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:38<00:00, 38.50s/it, est. speed input: 2.86 toks/s, output: 26.60 toks/s][A
+Processed prompts: 100%|██████████| 1/1 [00:38<00:00, 38.50s/it, est. speed input: 2.86 toks/s, output: 26.60 toks/s][AProcessed prompts: 100%|██████████| 1/1 [00:38<00:00, 38.50s/it, est. speed input: 2.86 toks/s, output: 26.60 toks/s]
+100%|██████████| 10/10 [06:35<00:00, 39.06s/it]100%|██████████| 10/10 [06:35<00:00, 39.57s/it]
+ratio 1.4222266694843104
