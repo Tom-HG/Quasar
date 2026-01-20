@@ -20,6 +20,6 @@ Run the quantization script:
 
 ```bash
 bash pangu_quant.sh
-
+```
 ## References
-MSIT Example: MSIT Qwen Example on Gitee \url{[https://gitee.com/ascend/msit/tree/master/msmodelslim/example/Qwen]}(https://gitee.com/ascend/msit/tree/master/msmodelslim/example/Qwen)
+MSIT Example: MSIT Qwen Example on Gitee \url{[https://gitee.com/ascend/msit/tree/master/msmodelslim/example/Qwen](https://gitee.com/ascend/msit/tree/master/msmodelslim/example/Qwen)}
