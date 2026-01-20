@@ -1,59 +1,67 @@
-# 盘古模型推理 - 投机推理
+# Model Inference - Speculative Inference
 
-## 概述
+## Overview
 
-当前软件配置如下：
+The current software configuration is as follows:
 
-- CANN: 8.1.rc1
-- vllm: 0.9.2
-- vllm-ascend: 0.9.2rc1
-- torch: 2.5.1
-- torch_npu: 2.5.1.post1
+| Component | Version | Path / Note |
+| :--- | :--- | :--- |
+| **CANN** | 8.1.rc1 | |
+| **vLLM** | 0.9.2 | |
+| **vLLM-Ascend** | 0.9.2rc1 | |
+| **Torch** | 2.5.1 | |
+| **Torch_NPU** | 2.5.1.post1 | |
 
-并且在/opt/panguy目录下已经预下载盘古模型权重：
-
-- 盘古1B：/opt/pangu/openPangu-Embedded-1B-V1.1
-- 盘古7B：/opt/pangu/openPangu-Embedded-7B-V1.1
-
-
-
-## 安装
+| **Pangu-7B** | | `/opt/pangu/openPangu-Embedded-7B-V1.1` |
+| **Qwen3-8B** | | `/home/Qwen3-8B` |
 
 
+## Installation
 
 ```bash
-pip install -r requriment.txt
-pip install pydantic===2.11.9
-```
+pip install -r requirements.txt
+pip install pydantic==2.11.9
 
 
 
-## 7B模型推理
+## Inference
 
-- 设置环量
+- Environment Setup
 
-如果您是基于conda环境进行推理（非docker镜像），请先切换到`pangu`环境:
+If you are performing inference in a Conda environment (non-Docker image), please activate the pangu environment first:
 
 ```bash
 conda activate pangu
 ```
 
-然后设置相应环境变量：
+Then, set the required environment variables:
 
 ```bash
 source /usr/local/Ascend/ascend-toolkit/set_env.sh
 source /usr/local/Ascend/nnal/atb/set_env.sh
 ```
 
-- 测试运行
+- Run Tests
+Execute the evaluation script:
 
 ```bash
 bash pangu_7B_eval.sh
 ```
 
-其中，`--bench-name`为测试的数据集。
+Note: The `--bench-name` parameter specifies the dataset to be tested.
 
-- 得到加速比结果
+- Evaluation Scripts
+To run the Python evaluation scripts directly:
+```bash
+python evaluation.py
+```
+or
+```bash
+python evaluation_qwen.py
+```
+
+- Calculate Speedup
+To generate the speedup results:
 
 ```bash
 python speed.py
