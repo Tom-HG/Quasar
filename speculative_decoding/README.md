@@ -11,7 +11,6 @@ The current software configuration is as follows:
 | **vLLM-Ascend** | 0.9.2rc1 | |
 | **Torch** | 2.5.1 | |
 | **Torch_NPU** | 2.5.1.post1 | |
-
 | **Pangu-7B** | | `/opt/pangu/openPangu-Embedded-7B-V1.1` |
 | **Qwen3-8B** | | `/home/Qwen3-8B` |
 
@@ -21,7 +20,7 @@ The current software configuration is as follows:
 ```bash
 pip install -r requirements.txt
 pip install pydantic==2.11.9
-
+```
 
 
 ## Inference
