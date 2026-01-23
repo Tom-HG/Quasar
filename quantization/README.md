@@ -11,8 +11,8 @@ The current software configuration is as follows:
 | **vLLM-Ascend** | 0.9.2rc1 | |
 | **Torch** | 2.5.1 | |
 | **Torch_NPU** | 2.5.1.post1 | |
-| **Pangu-7B** | | `/opt/pangu/openPangu-Embedded-7B-V1.1` |
-| **Qwen-8B** | | `/home/Qwen3-8B` |
+| **Pangu-7B** | `/opt/pangu/openPangu-Embedded-7B-V1.1` | |
+| **Qwen-8B** | `/home/Qwen3-8B` | |
 
 ## MSIT Usage
 
